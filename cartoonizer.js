@@ -1,6 +1,6 @@
 var Cartoonizer = (function($) {
-    var _video = $("#video");
-    var _canvas = $("#picture");
+    var _video = document.getElementById("video");
+    var _canvas = document.getElementById("picture");
 
 
     $(document).ready(function() {
