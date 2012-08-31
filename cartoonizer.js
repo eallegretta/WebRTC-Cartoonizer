@@ -4,8 +4,8 @@ var Cartoonizer = (function($) {
 
 
     $(document).ready(function() {
-        _canvas.width = 480;
-        _canvas.height = 360;
+        _canvas.width = 600;
+        _canvas.height = 600;
 
         captureVideo();
 
@@ -26,11 +26,13 @@ var Cartoonizer = (function($) {
         _canvas.getContext("2d").drawImage(_video, 0, 0, _canvas.width, _canvas.height);
 
         var img = new Image();
+        img.width = _canvas.width;
+        img.height = _canvas.height;
         img.onload = function() {
             Pixastic.process(img, "sharpen", {
-                amount: $("#value-amount").val()
+                amount: 0.7
             });
-            _canvas.drawImage(img);
+            _canvas.getContext("2d").drawImage(img, 0, 0, img.width, img.height);
         }
 
         img.src = _canvas.toDataURL("img/png");
