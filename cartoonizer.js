@@ -25,11 +25,8 @@ var Cartoonizer = (function($) {
     function takePicture() {
         _canvas.getContext("2d").drawImage(_video, 0, 0, _canvas.width, _canvas.height);
         $("#picture")
-
-            .load(function() {
-                $(this).pixastic("sharpen", { ammount: 0.7 });
-            })
             .attr("src", _canvas.toDataURL("img/png"))
+            .pixastic("sharpen", { ammount: 0.7 });
     }
 
 })(jQuery, undefined);
