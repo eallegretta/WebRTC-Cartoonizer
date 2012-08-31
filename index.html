@@ -7,20 +7,21 @@
         <style type="text/css">
             #video {
                 border:5px solid black;
-                width:600px;
-                height:600px;
+                width:480px;
+                height:360px;
             }
-            #picture {
+            #picture, #pictureBuffer {
                 border:5px solid black;
-                width:600px;
-                height:600px;     
+                width:480px;
+                height:360px;     
             }
         </style>    
     </head>
     <body>
         <div id="app">
             <video id="video" autoplay="autoplay"></video>
-            <canvas id="picture"></canvas>
+            <canvas id="pictureBuffer" style="display: none"></canvas>
+            <img id="picture" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Avatar" />
             <p>
             <button id="takePicture">Take Picture</button>
             </p>
